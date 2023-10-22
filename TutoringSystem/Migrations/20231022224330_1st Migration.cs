@@ -66,7 +66,7 @@ namespace TutoringSystem.Migrations
                     Email = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     PhoneNumber = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
                     Password = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
-                    Rate = table.Column<double>(type: "float", maxLength: 50, nullable: false),
+                    Rate = table.Column<double>(type: "float", nullable: false),
                     ModuleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -91,7 +91,7 @@ namespace TutoringSystem.Migrations
                     ModuleId = table.Column<int>(type: "int", nullable: false),
                     StartDate = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    Status = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    venue = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {

@@ -1,0 +1,71 @@
+﻿@model IEnumerable<TutoringSystem.Models.Tutor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TutName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TutLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Password)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Rate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Module)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.TutName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TutLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Password)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Rate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Module.ModuleName)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.TutId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.TutId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.TutId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

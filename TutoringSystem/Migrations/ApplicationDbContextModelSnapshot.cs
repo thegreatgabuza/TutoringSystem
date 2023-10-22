@@ -68,16 +68,17 @@ namespace TutoringSystem.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Status")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int?>("StudentId")
                         .IsRequired()
                         .HasColumnType("int");
 
                     b.Property<int>("TutorId")
                         .HasColumnType("int");
+
+                    b.Property<string>("venue")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("Id");
 
@@ -168,7 +169,6 @@ namespace TutoringSystem.Migrations
                         .HasColumnType("nvarchar(50)");
 
                     b.Property<double>("Rate")
-                        .HasMaxLength(50)
                         .HasColumnType("float");
 
                     b.Property<string>("TutLastName")
@@ -217,13 +217,13 @@ namespace TutoringSystem.Migrations
 
             modelBuilder.Entity("TutoringSystem.Models.Tutor", b =>
                 {
-                    b.HasOne("TutoringSystem.Models.Module", "modeule")
+                    b.HasOne("TutoringSystem.Models.Module", "Module")
                         .WithMany()
                         .HasForeignKey("ModuleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("modeule");
+                    b.Navigation("Module");
                 });
 
             modelBuilder.Entity("TutoringSystem.Models.Module", b =>

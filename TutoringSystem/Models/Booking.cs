@@ -9,15 +9,18 @@ namespace TutoringSystem.Models
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("Student")]
+        [Display(Name = "Student")]
+        [ForeignKey("StudentId")]
         public int? StudentId { get; set; }
         public Student Student { get; set; }
 
-        [ForeignKey("Tutor")]
+        [Display(Name = "Tutor")]
+        [ForeignKey("TutorId")]
         public int TutorId { get; set; }
         public Tutor Tutor { get; set; }
 
-        [ForeignKey("Module")]
+        [Display(Name ="Module")]
+        [ForeignKey("ModuleId")]
         public int? ModuleId { get; set; }
         public Module Module { get; set; }
 
@@ -29,6 +32,9 @@ namespace TutoringSystem.Models
         [Required]
         public DateTime EndDate { get; set; }
 
-        public string Status { get; set; }
+        [Required]
+        [Display(Name = "Venue")]
+        [StringLength(50)]
+        public string venue { get; set; }
     }
 }

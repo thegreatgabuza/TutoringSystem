@@ -39,13 +39,12 @@ namespace TutoringSystem.Models
         //public string Modules { get; set; }
 
         [Required]
-        [Display(Name = "Student Name")]
-        [StringLength(50)]
+        [Display(Name = "Rate Per Hour")]
         public double Rate { get; set; }
 
-        [ForeignKey("Module")]
+        [ForeignKey("ModuleId")]
         public int ModuleId { get; set; }
-        public Module modeule { get; set; }
+        public Module Module { get; set; }
 
      public ICollection<Booking> Bookings { get; set; }
         
