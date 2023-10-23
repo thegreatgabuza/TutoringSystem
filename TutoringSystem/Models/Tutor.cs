@@ -46,8 +46,16 @@ namespace TutoringSystem.Models
         public int ModuleId { get; set; }
         public Module Module { get; set; }
 
-     public ICollection<Booking> Bookings { get; set; }
-        
+        public ICollection<Booking> Bookings { get; set; }
+
+        // Private file upload property
+        private IFormFile _fileUpload;
+
+        public IFormFile FileUpload
+        {
+            get { return _fileUpload; }
+            set { _fileUpload = value; }
+        }
 
     }
 }
