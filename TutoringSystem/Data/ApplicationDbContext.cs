@@ -15,7 +15,7 @@ namespace TutoringSystem.Data
         public DbSet<Module> Modules { get; set; }
         public DbSet<Tutor> Tutors { get; set; }
         public DbSet<Booking> Bookings { get; set; }
-        public DbSet<Apply> Applications { get; set; }
+       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
